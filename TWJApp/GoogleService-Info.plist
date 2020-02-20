@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>240177577027-gi1a9dldk26tmaoucmgnuqcom2bkcgbr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.240177577027-gi1a9dldk26tmaoucmgnuqcom2bkcgbr</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBBeFK0yEyxeRBn7xeOaV87YqH_iSjyG1U</string>
+	<key>GCM_SENDER_ID</key>
+	<string>240177577027</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.VinceColeman.TWJApp</string>
+	<key>PROJECT_ID</key>
+	<string>twjapp-5ff3a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>twjapp-5ff3a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:240177577027:ios:1b2c97d097bc8813a7a8f6</string>
+	<key>DATABASE_URL</key>
+	<string>https://twjapp-5ff3a.firebaseio.com</string>
+</dict>
+</plist>

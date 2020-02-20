@@ -3,18 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E3671FCB07F948584A32BF7 /* Pods_TWJApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16EB7C61E7194B8049998B73 /* Pods_TWJApp.framework */; };
+		38F33950F64460BC8A307B4A /* Pods_TWJApp_TWJAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830172BAFE05D517A94D353C /* Pods_TWJApp_TWJAppUITests.framework */; };
 		BD4D603623ED2BC400EF89CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D603523ED2BC400EF89CE /* AppDelegate.swift */; };
 		BD4D603823ED2BC400EF89CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D603723ED2BC400EF89CE /* SceneDelegate.swift */; };
-		BD4D603A23ED2BC400EF89CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D603923ED2BC400EF89CE /* ViewController.swift */; };
+		BD4D603A23ED2BC400EF89CE /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D603923ED2BC400EF89CE /* LogInVC.swift */; };
 		BD4D603D23ED2BC400EF89CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD4D603B23ED2BC400EF89CE /* Main.storyboard */; };
 		BD4D603F23ED2BC800EF89CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD4D603E23ED2BC800EF89CE /* Assets.xcassets */; };
 		BD4D604223ED2BC800EF89CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD4D604023ED2BC800EF89CE /* LaunchScreen.storyboard */; };
 		BD4D604D23ED2BC800EF89CE /* TWJAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D604C23ED2BC800EF89CE /* TWJAppTests.swift */; };
 		BD4D605823ED2BC800EF89CE /* TWJAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D605723ED2BC800EF89CE /* TWJAppUITests.swift */; };
+		BD4D606623ED2CD900EF89CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD4D606523ED2CD900EF89CE /* GoogleService-Info.plist */; };
+		BDE25B0A23F4715F008EF29D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE25B0923F4715F008EF29D /* ProfileVC.swift */; };
+		BDFE19E823F85F9400118E90 /* InvoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFE19E723F85F9400118E90 /* InvoiceVC.swift */; };
+		D18D647284D269D789A01846 /* Pods_TWJAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CED9EFFDA5E559F9144687 /* Pods_TWJAppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +41,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16EB7C61E7194B8049998B73 /* Pods_TWJApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TWJApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B902A7CEA1C94280D9D97C4 /* Pods-TWJApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJApp.release.xcconfig"; path = "Target Support Files/Pods-TWJApp/Pods-TWJApp.release.xcconfig"; sourceTree = "<group>"; };
+		830172BAFE05D517A94D353C /* Pods_TWJApp_TWJAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TWJApp_TWJAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84458AEAD5880B42B09B0776 /* Pods-TWJAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJAppTests.release.xcconfig"; path = "Target Support Files/Pods-TWJAppTests/Pods-TWJAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		B7CED9EFFDA5E559F9144687 /* Pods_TWJAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TWJAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4D603223ED2BC400EF89CE /* TWJApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWJApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4D603523ED2BC400EF89CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD4D603723ED2BC400EF89CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BD4D603923ED2BC400EF89CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BD4D603923ED2BC400EF89CE /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		BD4D603C23ED2BC400EF89CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD4D603E23ED2BC800EF89CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD4D604123ED2BC800EF89CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +60,14 @@
 		BD4D605323ED2BC800EF89CE /* TWJAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TWJAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4D605723ED2BC800EF89CE /* TWJAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWJAppUITests.swift; sourceTree = "<group>"; };
 		BD4D605923ED2BC800EF89CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD4D606523ED2CD900EF89CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BDE25B0823F35A0D008EF29D /* TWJApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TWJApp.entitlements; sourceTree = "<group>"; };
+		BDE25B0923F4715F008EF29D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		BDFE19E723F85F9400118E90 /* InvoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceVC.swift; sourceTree = "<group>"; };
+		D08E52E1576333DAD779F024 /* Pods-TWJApp-TWJAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJApp-TWJAppUITests.release.xcconfig"; path = "Target Support Files/Pods-TWJApp-TWJAppUITests/Pods-TWJApp-TWJAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E05F94538CCB82DFD8BF50A1 /* Pods-TWJApp-TWJAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJApp-TWJAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-TWJApp-TWJAppUITests/Pods-TWJApp-TWJAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		ED3E1D8FF8FB55EB7147CE29 /* Pods-TWJAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TWJAppTests/Pods-TWJAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F599C2C32C0C1BA58B3740C9 /* Pods-TWJApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJApp.debug.xcconfig"; path = "Target Support Files/Pods-TWJApp/Pods-TWJApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E3671FCB07F948584A32BF7 /* Pods_TWJApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D18D647284D269D789A01846 /* Pods_TWJAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +91,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38F33950F64460BC8A307B4A /* Pods_TWJApp_TWJAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B480BF16A385A2D9E76372F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F599C2C32C0C1BA58B3740C9 /* Pods-TWJApp.debug.xcconfig */,
+				7B902A7CEA1C94280D9D97C4 /* Pods-TWJApp.release.xcconfig */,
+				E05F94538CCB82DFD8BF50A1 /* Pods-TWJApp-TWJAppUITests.debug.xcconfig */,
+				D08E52E1576333DAD779F024 /* Pods-TWJApp-TWJAppUITests.release.xcconfig */,
+				ED3E1D8FF8FB55EB7147CE29 /* Pods-TWJAppTests.debug.xcconfig */,
+				84458AEAD5880B42B09B0776 /* Pods-TWJAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AC1E4C88A985D93D846DEBA9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16EB7C61E7194B8049998B73 /* Pods_TWJApp.framework */,
+				830172BAFE05D517A94D353C /* Pods_TWJApp_TWJAppUITests.framework */,
+				B7CED9EFFDA5E559F9144687 /* Pods_TWJAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BD4D602923ED2BC400EF89CE = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +128,8 @@
 				BD4D604B23ED2BC800EF89CE /* TWJAppTests */,
 				BD4D605623ED2BC800EF89CE /* TWJAppUITests */,
 				BD4D603323ED2BC400EF89CE /* Products */,
+				8B480BF16A385A2D9E76372F /* Pods */,
+				AC1E4C88A985D93D846DEBA9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,12 +146,16 @@
 		BD4D603423ED2BC400EF89CE /* TWJApp */ = {
 			isa = PBXGroup;
 			children = (
+				BDE25B0823F35A0D008EF29D /* TWJApp.entitlements */,
 				BD4D603523ED2BC400EF89CE /* AppDelegate.swift */,
+				BDB67B6A23EDE10D00567D88 /* View */,
+				BDB67B6B23EDE11E00567D88 /* Controller */,
+				BDB67B6923EDE10400567D88 /* Model */,
 				BD4D603723ED2BC400EF89CE /* SceneDelegate.swift */,
-				BD4D603923ED2BC400EF89CE /* ViewController.swift */,
 				BD4D603B23ED2BC400EF89CE /* Main.storyboard */,
 				BD4D603E23ED2BC800EF89CE /* Assets.xcassets */,
 				BD4D604023ED2BC800EF89CE /* LaunchScreen.storyboard */,
+				BD4D606523ED2CD900EF89CE /* GoogleService-Info.plist */,
 				BD4D604323ED2BC800EF89CE /* Info.plist */,
 			);
 			path = TWJApp;
@@ -128,6 +179,30 @@
 			path = TWJAppUITests;
 			sourceTree = "<group>";
 		};
+		BDB67B6923EDE10400567D88 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BDB67B6A23EDE10D00567D88 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BD4D603923ED2BC400EF89CE /* LogInVC.swift */,
+				BDE25B0923F4715F008EF29D /* ProfileVC.swift */,
+				BDFE19E723F85F9400118E90 /* InvoiceVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BDB67B6B23EDE11E00567D88 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +210,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD4D605C23ED2BC800EF89CE /* Build configuration list for PBXNativeTarget "TWJApp" */;
 			buildPhases = (
+				0F61B0BB031576B946BF2975 /* [CP] Check Pods Manifest.lock */,
 				BD4D602E23ED2BC400EF89CE /* Sources */,
 				BD4D602F23ED2BC400EF89CE /* Frameworks */,
 				BD4D603023ED2BC400EF89CE /* Resources */,
+				2392509835E02291D3CA4C4C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +229,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD4D605F23ED2BC800EF89CE /* Build configuration list for PBXNativeTarget "TWJAppTests" */;
 			buildPhases = (
+				B02FD2D0BA3B1574A36700AA /* [CP] Check Pods Manifest.lock */,
 				BD4D604423ED2BC800EF89CE /* Sources */,
 				BD4D604523ED2BC800EF89CE /* Frameworks */,
 				BD4D604623ED2BC800EF89CE /* Resources */,
@@ -170,9 +248,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD4D606223ED2BC800EF89CE /* Build configuration list for PBXNativeTarget "TWJAppUITests" */;
 			buildPhases = (
+				DD10CE98DFFC9E586ED4EFAD /* [CP] Check Pods Manifest.lock */,
 				BD4D604F23ED2BC800EF89CE /* Sources */,
 				BD4D605023ED2BC800EF89CE /* Frameworks */,
 				BD4D605123ED2BC800EF89CE /* Resources */,
+				97BA960C8A5B480F889B7641 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD4D604223ED2BC800EF89CE /* LaunchScreen.storyboard in Resources */,
+				BD4D606623ED2CD900EF89CE /* GoogleService-Info.plist in Resources */,
 				BD4D603F23ED2BC800EF89CE /* Assets.xcassets in Resources */,
 				BD4D603D23ED2BC400EF89CE /* Main.storyboard in Resources */,
 			);
@@ -254,14 +335,119 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F61B0BB031576B946BF2975 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TWJApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2392509835E02291D3CA4C4C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TWJApp/Pods-TWJApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TWJApp/Pods-TWJApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TWJApp/Pods-TWJApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97BA960C8A5B480F889B7641 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TWJApp-TWJAppUITests/Pods-TWJApp-TWJAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TWJApp-TWJAppUITests/Pods-TWJApp-TWJAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TWJApp-TWJAppUITests/Pods-TWJApp-TWJAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B02FD2D0BA3B1574A36700AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TWJAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD10CE98DFFC9E586ED4EFAD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TWJApp-TWJAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BD4D602E23ED2BC400EF89CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD4D603A23ED2BC400EF89CE /* ViewController.swift in Sources */,
+				BD4D603A23ED2BC400EF89CE /* LogInVC.swift in Sources */,
+				BDE25B0A23F4715F008EF29D /* ProfileVC.swift in Sources */,
 				BD4D603623ED2BC400EF89CE /* AppDelegate.swift in Sources */,
 				BD4D603823ED2BC400EF89CE /* SceneDelegate.swift in Sources */,
+				BDFE19E823F85F9400118E90 /* InvoiceVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,8 +618,10 @@
 		};
 		BD4D605D23ED2BC800EF89CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F599C2C32C0C1BA58B3740C9 /* Pods-TWJApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TWJApp/TWJApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3L6638HBK3;
 				INFOPLIST_FILE = TWJApp/Info.plist;
@@ -450,8 +638,10 @@
 		};
 		BD4D605E23ED2BC800EF89CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B902A7CEA1C94280D9D97C4 /* Pods-TWJApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TWJApp/TWJApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3L6638HBK3;
 				INFOPLIST_FILE = TWJApp/Info.plist;
@@ -468,6 +658,7 @@
 		};
 		BD4D606023ED2BC800EF89CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED3E1D8FF8FB55EB7147CE29 /* Pods-TWJAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +681,7 @@
 		};
 		BD4D606123ED2BC800EF89CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84458AEAD5880B42B09B0776 /* Pods-TWJAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +704,7 @@
 		};
 		BD4D606323ED2BC800EF89CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E05F94538CCB82DFD8BF50A1 /* Pods-TWJApp-TWJAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +725,7 @@
 		};
 		BD4D606423ED2BC800EF89CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D08E52E1576333DAD779F024 /* Pods-TWJApp-TWJAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
