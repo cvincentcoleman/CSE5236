@@ -1,0 +1,6 @@
+framework module Pods_TWJApp_TWJAppUITests {
+  umbrella header "Pods-TWJApp-TWJAppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
