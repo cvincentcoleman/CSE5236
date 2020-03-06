@@ -12,7 +12,19 @@ import SwiftKeychainWrapper
 
 
 class LogInVC: UIViewController {
+    
+    
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("viewWillAppear was triggered")
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("viewWillDisappear was triggered")
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -26,6 +38,9 @@ class LogInVC: UIViewController {
                self.passwordInput = nil
              }
         }
+        
+        print("ViewDidLoad Triggered")
+        
     }
 
 

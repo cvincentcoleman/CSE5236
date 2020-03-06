@@ -25,6 +25,10 @@ class InvoiceVC: UIViewController {
         
         ref = Database.database().reference()
         
+        
+        
+        
+        
         // [START setup]
                let settings = FirestoreSettings()
 
@@ -43,6 +47,21 @@ class InvoiceVC: UIViewController {
         
         
         userRef = Database.database().reference().child("users").child(user.uid)
+        
+        
+        
+        ref.child("invoices").child("1").observeSingleEvent(of: .value, with: { (snapshot) in
+                // Get user value
+                let value = snapshot.value as? NSDictionary
+                let score = value?["amount"] as? Int ?? 0
+                print("invoice amount = ")
+                print(score)
+
+                
+                
+            }) { (error) in
+                    print(error.localizedDescription)
+        }
         
 //        SETS VALUE
 //        self.ref.child("users").child(user.uid).child("team").setValue("TWJ")
