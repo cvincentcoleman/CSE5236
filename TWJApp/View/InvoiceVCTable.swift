@@ -11,12 +11,12 @@ import UIKit
 class InvoiceVCTable: UITableViewController {
     
 //    wires the invoiceItemStore to the table view
-//    var invoiceItemStore: invoiceItemStore!
-//
-//    invoiceItemStore = invoiceItemStore()
+    var itemStore =  invoiceItemStore()
+
+
     
-//    override func tableView(_ tableView: UITableView,
-//            numberOfRowsInSection section: Int) -> Int {
-//        return invoiceItemStore.allItems.count
-//    }
+    override func tableView(_ tableView: UITableView,
+            numberOfRowsInSection section: Int) -> Int {
+        return itemStore.allInvoices.count
+    }
 }
