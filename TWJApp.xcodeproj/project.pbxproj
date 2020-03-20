@@ -12,21 +12,14 @@
 		BADFF86C1DC7B39FAEF6DD12 /* Pods_TWJApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A41A7E38F75D2383199498F /* Pods_TWJApp.framework */; };
 		BD4D603623ED2BC400EF89CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D603523ED2BC400EF89CE /* AppDelegate.swift */; };
 		BD4D603823ED2BC400EF89CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D603723ED2BC400EF89CE /* SceneDelegate.swift */; };
-		BD4D603A23ED2BC400EF89CE /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D603923ED2BC400EF89CE /* LogInVC.swift */; };
+		BD4D603A23ED2BC400EF89CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D603923ED2BC400EF89CE /* ViewController.swift */; };
 		BD4D603D23ED2BC400EF89CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD4D603B23ED2BC400EF89CE /* Main.storyboard */; };
 		BD4D603F23ED2BC800EF89CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD4D603E23ED2BC800EF89CE /* Assets.xcassets */; };
 		BD4D604223ED2BC800EF89CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD4D604023ED2BC800EF89CE /* LaunchScreen.storyboard */; };
 		BD4D604D23ED2BC800EF89CE /* TWJAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D604C23ED2BC800EF89CE /* TWJAppTests.swift */; };
 		BD4D605823ED2BC800EF89CE /* TWJAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D605723ED2BC800EF89CE /* TWJAppUITests.swift */; };
 		BD4D606623ED2CD900EF89CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD4D606523ED2CD900EF89CE /* GoogleService-Info.plist */; };
-		BD75EAFF241012700095100F /* InvoiceVCTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD75EAFE241012700095100F /* InvoiceVCTable.swift */; };
-		BD75EB01241013A70095100F /* InvoiceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD75EB00241013A70095100F /* InvoiceItem.swift */; };
-		BD75EB0324101AEA0095100F /* invoiceItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD75EB0224101AEA0095100F /* invoiceItemStore.swift */; };
-		BD75EB0524129BCA0095100F /* MeetingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD75EB0424129BCA0095100F /* MeetingVC.swift */; };
-		BD75EB0724129BEE0095100F /* Messages VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD75EB0624129BEE0095100F /* Messages VC.swift */; };
-		BD75EB0924129C230095100F /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD75EB0824129C230095100F /* NotificationsVC.swift */; };
-		BDE25B0A23F4715F008EF29D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE25B0923F4715F008EF29D /* ProfileVC.swift */; };
-		BDFE19E823F85F9400118E90 /* InvoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFE19E723F85F9400118E90 /* InvoiceVC.swift */; };
+		BD5D15102423DB2B00CAE49E /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D150F2423DB2B00CAE49E /* ViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +48,7 @@
 		BD4D603223ED2BC400EF89CE /* TWJApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWJApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4D603523ED2BC400EF89CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD4D603723ED2BC400EF89CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BD4D603923ED2BC400EF89CE /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
+		BD4D603923ED2BC400EF89CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BD4D603C23ED2BC400EF89CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD4D603E23ED2BC800EF89CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD4D604123ED2BC800EF89CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,15 +60,8 @@
 		BD4D605723ED2BC800EF89CE /* TWJAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWJAppUITests.swift; sourceTree = "<group>"; };
 		BD4D605923ED2BC800EF89CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD4D606523ED2CD900EF89CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		BD75EAFE241012700095100F /* InvoiceVCTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceVCTable.swift; sourceTree = "<group>"; };
-		BD75EB00241013A70095100F /* InvoiceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItem.swift; sourceTree = "<group>"; };
-		BD75EB0224101AEA0095100F /* invoiceItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = invoiceItemStore.swift; sourceTree = "<group>"; };
-		BD75EB0424129BCA0095100F /* MeetingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingVC.swift; sourceTree = "<group>"; };
-		BD75EB0624129BEE0095100F /* Messages VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Messages VC.swift"; sourceTree = "<group>"; };
-		BD75EB0824129C230095100F /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
+		BD5D150F2423DB2B00CAE49E /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		BDE25B0823F35A0D008EF29D /* TWJApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TWJApp.entitlements; sourceTree = "<group>"; };
-		BDE25B0923F4715F008EF29D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		BDFE19E723F85F9400118E90 /* InvoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceVC.swift; sourceTree = "<group>"; };
 		D08E52E1576333DAD779F024 /* Pods-TWJApp-TWJAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJApp-TWJAppUITests.release.xcconfig"; path = "Target Support Files/Pods-TWJApp-TWJAppUITests/Pods-TWJApp-TWJAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E05F94538CCB82DFD8BF50A1 /* Pods-TWJApp-TWJAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJApp-TWJAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-TWJApp-TWJAppUITests/Pods-TWJApp-TWJAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED3E1D8FF8FB55EB7147CE29 /* Pods-TWJAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TWJAppTests/Pods-TWJAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,7 +147,6 @@
 				BDE25B0823F35A0D008EF29D /* TWJApp.entitlements */,
 				BD4D603523ED2BC400EF89CE /* AppDelegate.swift */,
 				BDB67B6A23EDE10D00567D88 /* View */,
-				BDB67B6B23EDE11E00567D88 /* Controller */,
 				BDB67B6923EDE10400567D88 /* Model */,
 				BD4D603723ED2BC400EF89CE /* SceneDelegate.swift */,
 				BD4D603B23ED2BC400EF89CE /* Main.storyboard */,
@@ -201,24 +186,10 @@
 		BDB67B6A23EDE10D00567D88 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BD75EB0424129BCA0095100F /* MeetingVC.swift */,
-				BD4D603923ED2BC400EF89CE /* LogInVC.swift */,
-				BDE25B0923F4715F008EF29D /* ProfileVC.swift */,
-				BDFE19E723F85F9400118E90 /* InvoiceVC.swift */,
-				BD75EAFE241012700095100F /* InvoiceVCTable.swift */,
-				BD75EB0624129BEE0095100F /* Messages VC.swift */,
-				BD75EB0824129C230095100F /* NotificationsVC.swift */,
+				BD4D603923ED2BC400EF89CE /* ViewController.swift */,
+				BD5D150F2423DB2B00CAE49E /* ViewExtension.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		BDB67B6B23EDE11E00567D88 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				BD75EB00241013A70095100F /* InvoiceItem.swift */,
-				BD75EB0224101AEA0095100F /* invoiceItemStore.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -461,17 +432,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD4D603A23ED2BC400EF89CE /* LogInVC.swift in Sources */,
-				BDE25B0A23F4715F008EF29D /* ProfileVC.swift in Sources */,
-				BD75EB0324101AEA0095100F /* invoiceItemStore.swift in Sources */,
-				BD75EB0524129BCA0095100F /* MeetingVC.swift in Sources */,
+				BD4D603A23ED2BC400EF89CE /* ViewController.swift in Sources */,
 				BD4D603623ED2BC400EF89CE /* AppDelegate.swift in Sources */,
-				BD75EB0924129C230095100F /* NotificationsVC.swift in Sources */,
-				BD75EAFF241012700095100F /* InvoiceVCTable.swift in Sources */,
+				BD5D15102423DB2B00CAE49E /* ViewExtension.swift in Sources */,
 				BD4D603823ED2BC400EF89CE /* SceneDelegate.swift in Sources */,
-				BD75EB0724129BEE0095100F /* Messages VC.swift in Sources */,
-				BD75EB01241013A70095100F /* InvoiceItem.swift in Sources */,
-				BDFE19E823F85F9400118E90 /* InvoiceVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
