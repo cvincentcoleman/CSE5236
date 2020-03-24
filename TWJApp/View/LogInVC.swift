@@ -73,6 +73,9 @@ class LogInVC: UIViewController {
           if error == nil {
             Auth.auth().signIn(withEmail: self.emailInput.text!,
                                password: self.passwordInput.text!)
+            
+            
+            
           }
         }
         

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FirebaseAuth
+import Firebase
 
 class ProfileVC: UIViewController {
 
@@ -15,7 +15,22 @@ class ProfileVC: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        
+        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { (snapshot) in
+            guard let data = snapshot.value as? [String :Any] else {return}
+            let userr = Userr.init(data: data)
+            self.userLabel.text = userr.username
+        
+        
+        }
+        
+        
+    
     }
+    
+    @IBOutlet var userLabel: UILabel!
     
     @IBAction func signOut(_ sender: AnyObject){
         do{

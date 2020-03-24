@@ -25,7 +25,7 @@
 		BD75EB0524129BCA0095100F /* MeetingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD75EB0424129BCA0095100F /* MeetingVC.swift */; };
 		BD75EB0724129BEE0095100F /* Messages VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD75EB0624129BEE0095100F /* Messages VC.swift */; };
 		BD75EB0924129C230095100F /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD75EB0824129C230095100F /* NotificationsVC.swift */; };
-		BD75EB0B24129C4B0095100F /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD75EB0A24129C4B0095100F /* ProfileVC.swift */; };
+		BDA76B84242A77300027F5D6 /* userr.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA76B83242A77300027F5D6 /* userr.swift */; };
 		BDE25B0A23F4715F008EF29D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE25B0923F4715F008EF29D /* ProfileVC.swift */; };
 		BDFE19E823F85F9400118E90 /* InvoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFE19E723F85F9400118E90 /* InvoiceVC.swift */; };
 /* End PBXBuildFile section */
@@ -74,7 +74,7 @@
 		BD75EB0424129BCA0095100F /* MeetingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingVC.swift; sourceTree = "<group>"; };
 		BD75EB0624129BEE0095100F /* Messages VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Messages VC.swift"; sourceTree = "<group>"; };
 		BD75EB0824129C230095100F /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
-		BD75EB0A24129C4B0095100F /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileVC.swift; path = ../ProfileVC.swift; sourceTree = "<group>"; };
+		BDA76B83242A77300027F5D6 /* userr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userr.swift; sourceTree = "<group>"; };
 		BDE25B0823F35A0D008EF29D /* TWJApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TWJApp.entitlements; sourceTree = "<group>"; };
 		BDE25B0923F4715F008EF29D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		BDFE19E723F85F9400118E90 /* InvoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceVC.swift; sourceTree = "<group>"; };
@@ -206,11 +206,11 @@
 				BD75EB0424129BCA0095100F /* MeetingVC.swift */,
 				BD4D603923ED2BC400EF89CE /* LogInVC.swift */,
 				BDE25B0923F4715F008EF29D /* ProfileVC.swift */,
+				BDA76B83242A77300027F5D6 /* userr.swift */,
 				BDFE19E723F85F9400118E90 /* InvoiceVC.swift */,
 				BD75EAFE241012700095100F /* InvoiceVCTable.swift */,
 				BD75EB0624129BEE0095100F /* Messages VC.swift */,
 				BD75EB0824129C230095100F /* NotificationsVC.swift */,
-				BD75EB0A24129C4B0095100F /* ProfileVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -464,7 +464,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD75EB0B24129C4B0095100F /* ProfileVC.swift in Sources */,
 				BD4D603A23ED2BC400EF89CE /* LogInVC.swift in Sources */,
 				BDE25B0A23F4715F008EF29D /* ProfileVC.swift in Sources */,
 				BD75EB0324101AEA0095100F /* invoiceItemStore.swift in Sources */,
@@ -473,6 +472,7 @@
 				BD75EB0924129C230095100F /* NotificationsVC.swift in Sources */,
 				BD75EAFF241012700095100F /* InvoiceVCTable.swift in Sources */,
 				BD4D603823ED2BC400EF89CE /* SceneDelegate.swift in Sources */,
+				BDA76B84242A77300027F5D6 /* userr.swift in Sources */,
 				BD75EB0724129BEE0095100F /* Messages VC.swift in Sources */,
 				BD75EB01241013A70095100F /* InvoiceItem.swift in Sources */,
 				BDFE19E823F85F9400118E90 /* InvoiceVC.swift in Sources */,
