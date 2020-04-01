@@ -9,6 +9,9 @@
 import UIKit
 import Firebase
 
+
+
+
 class ProfileVC: UIViewController {
 
     override func viewDidLoad() {
@@ -16,15 +19,11 @@ class ProfileVC: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        guard let uid = Auth.auth().currentUser?.uid else {return}
+        let tabbar = self.tabBarController as! TabBarController
         
-        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { (snapshot) in
-            guard let data = snapshot.value as? [String :Any] else {return}
-            let userr = Userr.init(data: data)
-            self.userLabel.text = userr.username
+        guard let userEmail = tabbar.userInformation?.email else {return}
         
-        
-        }
+        userLabel.text = userEmail
         
         
     

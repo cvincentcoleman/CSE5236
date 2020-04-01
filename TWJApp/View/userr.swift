@@ -9,9 +9,11 @@
 import Foundation
 
 struct Userr {
-    let username: String
+    let email: String
+    let team: String
     
     init(data: [String:Any]) {
-        self.username = data["email"] as? String ?? "not working"
+        self.email = data["email"] as? String ?? "not working"
+        self.team = data["team"] as? String ?? "noteam"
     }
 }
