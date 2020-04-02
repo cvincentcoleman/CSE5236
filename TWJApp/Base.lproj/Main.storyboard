@@ -83,22 +83,6 @@
             </objects>
             <point key="canvasLocation" x="-71" y="1223"/>
         </scene>
-        <!--Meetings-->
-        <scene sceneID="kXE-P5-1Lr">
-            <objects>
-                <viewController id="Xfv-NS-CdZ" customClass="MeetingVC" customModule="TWJApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="afY-C7-g3i">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="h11-PN-nVd"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Meetings" id="r5d-6W-uBm"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EO6-LA-eZW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2238" y="201"/>
-        </scene>
         <!--Notifications-->
         <scene sceneID="iuN-dW-dlg">
             <objects>
@@ -168,7 +152,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="ta8-d6-EtB" kind="relationship" relationship="viewControllers" id="7of-cZ-82D"/>
-                        <segue destination="Xfv-NS-CdZ" kind="relationship" relationship="viewControllers" id="QRU-t6-obO"/>
+                        <segue destination="VGp-8l-Sim" kind="relationship" relationship="viewControllers" id="r52-ZC-03k"/>
                         <segue destination="dlp-Uh-taa" kind="relationship" relationship="viewControllers" id="2Yn-FY-gUr"/>
                         <segue destination="BeI-O4-sbj" kind="relationship" relationship="viewControllers" id="r4b-3t-sdh"/>
                     </connections>
@@ -205,6 +189,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oqA-ky-tjB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2190" y="-472"/>
+        </scene>
+        <!--Meetings-->
+        <scene sceneID="SDH-CP-1Zs">
+            <objects>
+                <tableViewController id="VGp-8l-Sim" customClass="MeetingVC" customModule="TWJApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="z59-Oa-XZC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MeetingItem" id="4UI-Y2-i2c">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4UI-Y2-i2c" id="Qxh-Iw-nHJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VGp-8l-Sim" id="PQg-me-u9g"/>
+                            <outlet property="delegate" destination="VGp-8l-Sim" id="omz-je-Fhg"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Meetings" id="8ou-a2-rVb"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xn0-Wm-ggn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2284" y="211"/>
         </scene>
     </scenes>
 </document>
