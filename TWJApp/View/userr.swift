@@ -13,7 +13,7 @@ struct Userr {
     let team: String
     
     init(data: [String:Any]) {
-        self.email = data["email"] as? String ?? "not working"
-        self.team = data["team"] as? String ?? "noteam"
+        self.email = data["email"] as? String ?? "no email"
+        self.team = data["team"] as? String ?? "no team"
     }
 }
