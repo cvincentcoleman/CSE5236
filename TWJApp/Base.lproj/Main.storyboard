@@ -168,9 +168,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="ta8-d6-EtB" kind="relationship" relationship="viewControllers" id="7of-cZ-82D"/>
-                        <segue destination="BeI-O4-sbj" kind="relationship" relationship="viewControllers" id="r4b-3t-sdh"/>
-                        <segue destination="dlp-Uh-taa" kind="relationship" relationship="viewControllers" id="2Yn-FY-gUr"/>
                         <segue destination="Xfv-NS-CdZ" kind="relationship" relationship="viewControllers" id="QRU-t6-obO"/>
+                        <segue destination="dlp-Uh-taa" kind="relationship" relationship="viewControllers" id="2Yn-FY-gUr"/>
+                        <segue destination="BeI-O4-sbj" kind="relationship" relationship="viewControllers" id="r4b-3t-sdh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ww0-5B-QHC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -180,18 +180,17 @@
         <!--Invoices-->
         <scene sceneID="SSC-cz-1d5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oqA-ky-tjB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController id="ta8-d6-EtB" customClass="InvoiceVC" customModule="TWJApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hKC-Dt-qvo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="zq1-4e-nkU">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="InvoiceItem" id="4ib-pI-khx">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zq1-4e-nkU" id="CNe-SN-aUi">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4ib-pI-khx" id="3B3-Uy-YA7">
+                                    <rect key="frame" x="0.0" y="0.0" width="370" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -203,6 +202,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Invoices" id="0tj-fn-Wd3"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oqA-ky-tjB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2190" y="-472"/>
         </scene>

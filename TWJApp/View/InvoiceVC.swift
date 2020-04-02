@@ -52,7 +52,29 @@ class InvoiceVC: UITableViewController {
             }
         }
     }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return invoices.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "InvoiceItem", for: indexPath)
+        let row = indexPath.row
+        cell.textLabel?.text =   String(format: "amount: %.2f", invoices[row].amount)
+        if (!invoices[row].paid){
+            cell.tintColor = .white
+        }
+        
+        
+        return cell
+    }
+    
 }
+
+
 
 struct Invoice {
     let amount:Double
