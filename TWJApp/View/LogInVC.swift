@@ -37,7 +37,6 @@ class LogInVC: UIViewController {
                     guard let data = snapshot.value as? [String :Any] else {return}
                     guard let admin = data["admin"] as? Bool else {return}
                     if admin {
-                        print("wtf")
                         self.performSegue(withIdentifier: "adminLogIn", sender: nil)
                     }
                     else{

@@ -56,7 +56,7 @@ class InvoiceVC: UITableViewController {
                     let (key, _) = arg0
                     invoiceNames.append(key)
                 })
-                
+                self.invoices = []
                 invoiceNames.forEach { (item) in
                     Database.database().reference().child("invoices").child(item).observe(.value) { (snapshot3) in
                         guard let invoice = Invoice.init(snapshot: snapshot3) else {return}
@@ -94,11 +94,16 @@ class InvoiceVC: UITableViewController {
         
         let saveInvoice = UIAlertAction(title: "Save Invoice", style: .default) { (_) in
             guard let invoiceInput = alert.textFields?.first,
-                let invoice = invoiceInput.text else {return}
+                let invoiceAmount = invoiceInput.text else {return}
             
-            let invoiceRef = Database.database().reference().child("team").child(self.team!).child("invoices").childByAutoId()
-          
+            let invoiceRef = Database.database().reference().child("teams").child(self.team!).child("invoices").childByAutoId()
             invoiceRef.setValue(true)
+            
+            let invoiceKey = invoiceRef.key
+            
+            Database.database().reference().child("invoices").child(invoiceKey!).setValue(["amount":Double(invoiceAmount)! ,"team":self.team!,"paid":false])
+            
+            
         }
         
         let cancelAddInvoice = UIAlertAction(title: "Cancel", style: .cancel)
