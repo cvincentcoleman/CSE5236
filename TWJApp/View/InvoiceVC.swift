@@ -12,15 +12,21 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
+//fix this so that it only sends over the team and not the user
 class InvoiceVC: UITableViewController {
     
     var invoices: [Invoice] = []
     //need this due to a bug. Why can't I retrieve the data immedietly?
     var userInformation: Userr?
     
+    var team:String?
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         guard let uid = Auth.auth().currentUser?.uid else {return}
         
@@ -28,9 +34,19 @@ class InvoiceVC: UITableViewController {
             guard let data = snapshot.value as? [String :Any] else {return}
             self.userInformation = Userr.init(data: data)
             
-            guard let userTeam = self.userInformation?.team else {
+            
+            
+            guard var userTeam = self.userInformation?.team else {
                 return
             }
+            
+            if self.userInformation?.admin ?? false {
+                userTeam = self.team!
+                self.addButton.isEnabled = true
+            } else{
+                self.addButton.isEnabled = false
+            }
+           
             
             Database.database().reference().child("teams").child(userTeam).child("invoices").observe(.value) { (snapshot2) in
                 
@@ -45,7 +61,6 @@ class InvoiceVC: UITableViewController {
                     Database.database().reference().child("invoices").child(item).observe(.value) { (snapshot3) in
                         guard let invoice = Invoice.init(snapshot: snapshot3) else {return}
                         self.invoices.append(invoice)
-                        print(self.invoices)
                         self.tableView.reloadData()
                     }
                 }
@@ -72,6 +87,33 @@ class InvoiceVC: UITableViewController {
         return cell
     }
     
+    @IBOutlet var addButton: UIBarButtonItem!
+    
+    @IBAction func addButtonDidTouch(_ sender: AnyObject){
+        let alert = UIAlertController(title: "Invoice", message: "Add Invoice", preferredStyle: .alert)
+        
+        let saveInvoice = UIAlertAction(title: "Save Invoice", style: .default) { (_) in
+            guard let invoiceInput = alert.textFields?.first,
+                let invoice = invoiceInput.text else {return}
+            
+            let invoiceRef = Database.database().reference().child("team").child(self.team!).child("invoices").childByAutoId()
+          
+            invoiceRef.setValue(true)
+        }
+        
+        let cancelAddInvoice = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alert.addTextField()
+        alert.addAction(saveInvoice)
+        alert.addAction(cancelAddInvoice)
+        
+        
+        
+        
+        present(alert, animated: true, completion: nil)
+        self.tableView.reloadData()
+
+    }
     
     
 }

@@ -19,6 +19,7 @@ class TeamsVC: UITableViewController{
      override func viewDidLoad() {
          super.viewDidLoad()
         
+        
         Database.database().reference().child("teams").observe(.value) { (snapshot) in
             self.teams = []
             
@@ -44,7 +45,6 @@ class TeamsVC: UITableViewController{
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        print("hi")
 
         guard let indexPath = tableView.indexPathForSelectedRow else {return}
         let cell = tableView.cellForRow(at: indexPath)
@@ -54,9 +54,8 @@ class TeamsVC: UITableViewController{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("hello")
-        if (segue.identifier == "TeamDetail"){
-            let viewController = segue.destination as! TeamOverviewVC
+        if let viewController = segue.destination as? TeamOverviewVC {
+            self.tableView.reloadData()
             viewController.teamNameValue = teamName
         }
     }
@@ -68,7 +67,6 @@ class TeamsVC: UITableViewController{
         
          return cell
      }
-    
     
     
     @IBAction func addButtonDidTouch(_ sender: AnyObject){

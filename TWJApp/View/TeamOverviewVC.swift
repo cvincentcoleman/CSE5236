@@ -22,5 +22,13 @@ class TeamOverviewVC: UIViewController{
     
     @IBOutlet var teamName: UILabel!
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toInvoicesFromTeam" {
+            let vc = segue.destination as? InvoiceVC
+            vc?.team = teamNameValue
+        }
+    }
+    
 }
 

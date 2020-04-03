@@ -25,7 +25,6 @@
                                 <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="SignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Yo-tD-3VD"/>
-                                    <segue destination="9LK-g0-cFQ" kind="show" identifier="adminLogIn" id="Sq1-gB-vhr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZh-xF-f1V">
@@ -61,6 +60,7 @@
                         <outlet property="emailInput" destination="JnZ-QJ-L0k" id="SO5-hM-ONf"/>
                         <outlet property="passwordInput" destination="3lS-oK-KJR" id="G8f-TG-A21"/>
                         <segue destination="7dR-Qm-ruC" kind="show" identifier="logIn" id="7IC-DT-w8B"/>
+                        <segue destination="9LK-g0-cFQ" kind="show" identifier="adminLogIn" id="CiR-ZI-hGD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -168,7 +168,16 @@
                             <outlet property="delegate" destination="8zQ-6Q-flt" id="TLa-F0-4Ap"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Invoices" id="VkF-hY-4ge"/>
+                    <navigationItem key="navigationItem" title="Invoices" id="VkF-hY-4ge">
+                        <barButtonItem key="rightBarButtonItem" title="Add" image="plus" catalog="system" largeContentSizeImage="plus" id="wSj-2b-ho8">
+                            <connections>
+                                <action selector="addButtonDidTouch:" destination="8zQ-6Q-flt" id="ttO-ls-CXr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="wSj-2b-ho8" id="tAx-bp-BaZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yeh-hC-vWM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -179,6 +188,7 @@
             <objects>
                 <navigationController id="oV7-sd-Doq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Invoices" id="Yll-Wh-ijG"/>
+                    <navigationItem key="navigationItem" id="Eg1-qb-T3l"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K2K-co-24M">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -273,9 +283,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="e7h-dc-nDX" kind="show" identifier="TeamDetail" id="gFf-Lw-O69"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -290,6 +297,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="e7h-dc-nDX" kind="show" identifier="TeamDetail" id="Zjv-Uu-lk7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J2A-J4-Rj4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -309,10 +319,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7C-3U-TzU">
+                                <rect key="frame" x="179" y="467" width="56" height="30"/>
+                                <state key="normal" title="Invoices"/>
+                                <connections>
+                                    <segue destination="8zQ-6Q-flt" kind="show" identifier="toInvoicesFromTeam" id="cii-pe-eve"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="b7C-3U-TzU" firstAttribute="top" secondItem="KUL-mW-Q8m" secondAttribute="bottom" constant="35.5" id="APv-4P-aSX"/>
                             <constraint firstItem="KUL-mW-Q8m" firstAttribute="centerY" secondItem="4zX-78-9ex" secondAttribute="centerY" id="Lcp-TI-0ng"/>
+                            <constraint firstItem="b7C-3U-TzU" firstAttribute="centerX" secondItem="4zX-78-9ex" secondAttribute="centerX" id="jzt-rz-xhm"/>
                             <constraint firstItem="KUL-mW-Q8m" firstAttribute="centerX" secondItem="4zX-78-9ex" secondAttribute="centerX" id="p7E-fS-ys1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0Mr-gL-ENF"/>
@@ -345,6 +364,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="cii-pe-eve"/>
         <segue reference="tuh-uv-2YQ"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+    </resources>
 </document>
