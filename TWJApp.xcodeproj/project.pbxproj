@@ -10,6 +10,8 @@
 		82C7C20DD51A1F7EC0287570 /* Pods_TWJAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC97885E7E6CAAD18F00881 /* Pods_TWJAppTests.framework */; };
 		849A02132374AB0CFB9587BE /* Pods_TWJApp_TWJAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0940E10CC61392201DD9D0A4 /* Pods_TWJApp_TWJAppUITests.framework */; };
 		BADFF86C1DC7B39FAEF6DD12 /* Pods_TWJApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A41A7E38F75D2383199498F /* Pods_TWJApp.framework */; };
+		BD2C71CC2436B46C000052B2 /* teamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C71CB2436B46C000052B2 /* teamsVC.swift */; };
+		BD2C71CE2436C80D000052B2 /* TeamOverviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C71CD2436C80D000052B2 /* TeamOverviewVC.swift */; };
 		BD4D603623ED2BC400EF89CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D603523ED2BC400EF89CE /* AppDelegate.swift */; };
 		BD4D603823ED2BC400EF89CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D603723ED2BC400EF89CE /* SceneDelegate.swift */; };
 		BD4D603A23ED2BC400EF89CE /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D603923ED2BC400EF89CE /* LogInVC.swift */; };
@@ -52,6 +54,8 @@
 		7A41A7E38F75D2383199498F /* Pods_TWJApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TWJApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B902A7CEA1C94280D9D97C4 /* Pods-TWJApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJApp.release.xcconfig"; path = "Target Support Files/Pods-TWJApp/Pods-TWJApp.release.xcconfig"; sourceTree = "<group>"; };
 		84458AEAD5880B42B09B0776 /* Pods-TWJAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJAppTests.release.xcconfig"; path = "Target Support Files/Pods-TWJAppTests/Pods-TWJAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		BD2C71CB2436B46C000052B2 /* teamsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = teamsVC.swift; sourceTree = "<group>"; };
+		BD2C71CD2436C80D000052B2 /* TeamOverviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamOverviewVC.swift; sourceTree = "<group>"; };
 		BD4D603223ED2BC400EF89CE /* TWJApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWJApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4D603523ED2BC400EF89CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD4D603723ED2BC400EF89CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -208,6 +212,8 @@
 				BDFE19E723F85F9400118E90 /* InvoiceVC.swift */,
 				BD75EB0824129C230095100F /* NotificationsVC.swift */,
 				BDB643D3243538EA00740779 /* TabBarController.swift */,
+				BD2C71CB2436B46C000052B2 /* teamsVC.swift */,
+				BD2C71CD2436C80D000052B2 /* TeamOverviewVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -464,6 +470,7 @@
 				BD4D603A23ED2BC400EF89CE /* LogInVC.swift in Sources */,
 				BDE25B0A23F4715F008EF29D /* ProfileVC.swift in Sources */,
 				BD75EB0324101AEA0095100F /* invoiceItemStore.swift in Sources */,
+				BD2C71CC2436B46C000052B2 /* teamsVC.swift in Sources */,
 				BD75EB0524129BCA0095100F /* MeetingVC.swift in Sources */,
 				BD4D603623ED2BC400EF89CE /* AppDelegate.swift in Sources */,
 				BD75EB0924129C230095100F /* NotificationsVC.swift in Sources */,
@@ -472,6 +479,7 @@
 				BDB643D4243538EA00740779 /* TabBarController.swift in Sources */,
 				BD75EB01241013A70095100F /* InvoiceItem.swift in Sources */,
 				BDFE19E823F85F9400118E90 /* InvoiceVC.swift in Sources */,
+				BD2C71CE2436C80D000052B2 /* TeamOverviewVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

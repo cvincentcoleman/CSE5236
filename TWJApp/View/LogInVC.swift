@@ -30,8 +30,21 @@ class LogInVC: UIViewController {
            
            Auth.auth().addStateDidChangeListener() { auth, user in
              if user != nil {
+                
+                guard let uid = Auth.auth().currentUser?.uid else {return}
+                
+                Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { (snapshot) in
+                    guard let data = snapshot.value as? [String :Any] else {return}
+                    guard let admin = data["admin"] as? Bool else {return}
+                    if admin {
+                        self.performSegue(withIdentifier: "adminLogIn", sender: nil)
+                    }
+                    else{
+                        self.performSegue(withIdentifier: "logIn", sender: nil)
+                    }
+                }
+                
                
-               self.performSegue(withIdentifier: "logIn", sender: nil)
                self.emailInput.text = nil
                self.passwordInput = nil
              }
@@ -64,6 +77,15 @@ class LogInVC: UIViewController {
     }
     
     @IBAction func SignUp (_ sender: AnyObject){
+        
+        guard
+          let email = emailInput.text,
+          let password = passwordInput.text,
+          email.count > 0,
+          password.count > 0
+          else {
+            return
+        }
 
         Auth.auth().createUser(withEmail: emailInput.text!, password: passwordInput.text!) { user, error in
           if error == nil {
