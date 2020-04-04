@@ -122,6 +122,21 @@ class MeetingVC: UITableViewController {
 
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+      return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+      if editingStyle == .delete {
+        let meeting = meetings[indexPath.row]
+        
+        Database.database().reference().child("teams").child(self.team!).child("meetings").child(meeting.ref.key!).removeValue()
+        meeting.ref.removeValue()
+        meetings = []
+        self.tableView.reloadData()
+      }
+    }
+    
    
 
 }
@@ -130,6 +145,7 @@ struct Meeting {
     let date:String
     let location:String
     let time:String
+    let ref:DatabaseReference
     
     init?(snapshot: DataSnapshot) {
         guard
@@ -141,5 +157,6 @@ struct Meeting {
         self.date = date
         self.location = location
         self.time = time
+        self.ref = snapshot.ref
     }
 }

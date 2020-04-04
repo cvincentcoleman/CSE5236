@@ -26,7 +26,7 @@ class InvoiceVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        invoices = []
         
         guard let uid = Auth.auth().currentUser?.uid else {return}
         
@@ -120,6 +120,21 @@ class InvoiceVC: UITableViewController {
 
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+      return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+      if editingStyle == .delete {
+        let invoice = invoices[indexPath.row]
+        
+        Database.database().reference().child("teams").child(self.team!).child("invoices").child(invoice.invoiceRef.key!).removeValue()
+        invoice.invoiceRef.removeValue()
+        invoices = []
+        self.tableView.reloadData()
+      }
+    }
+    
     
 }
 
@@ -129,16 +144,19 @@ struct Invoice {
     let amount:Double
     let paid:Bool
     let team:String
+    let invoiceRef: DatabaseReference
     
     init?(snapshot: DataSnapshot) {
         guard
             let data = snapshot.value as? [String:Any],
             let amount = data["amount"] as? Double,
             let paid = data["paid"] as? Bool,
-        let team = data["team"] as? String else {return nil}
+            let team = data["team"] as? String else {return nil}
+        
         
         self.amount = amount
         self.paid = paid
         self.team = team
+        self.invoiceRef = snapshot.ref
     }
 }
