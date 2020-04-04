@@ -18,6 +18,8 @@ class MeetingVC: UITableViewController {
     //need this due to a bug. Why can't I retrieve the data immedietly?
     var userInformation: Userr?
     
+    var team:String?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +30,15 @@ class MeetingVC: UITableViewController {
             guard let data = snapshot.value as? [String :Any] else {return}
             self.userInformation = Userr.init(data: data)
             
-            guard let userTeam = self.userInformation?.team else {
+            guard var userTeam = self.userInformation?.team else {
                 return
             }
+            if self.userInformation?.admin ?? false {
+                           userTeam = self.team!
+                           self.addButton.isEnabled = true
+                       } else{
+                           self.addButton.isEnabled = false
+                       }
             
             Database.database().reference().child("teams").child(userTeam).child("meetings").observe(.value) { (snapshot2) in
                 
@@ -40,12 +48,11 @@ class MeetingVC: UITableViewController {
                     let (key, _) = arg0
                     meetingNames.append(key)
                 })
-                
+                self.meetings = []
                 meetingNames.forEach { (item) in
                     Database.database().reference().child("meetings").child(item).observe(.value) { (snapshot3) in
                         guard let meetings = Meeting.init(snapshot: snapshot3) else {return}
                         self.meetings.append(meetings)
-                        print(self.meetings)
                         self.tableView.reloadData()
                     }
                 }
@@ -70,6 +77,50 @@ class MeetingVC: UITableViewController {
         return cell
     }
     
+    @IBOutlet var addButton: UIBarButtonItem!
+    
+    @IBAction func addButtonDidTouch(_ sender: AnyObject){
+        let alert = UIAlertController(title: "Meeting", message: "Add Meeting", preferredStyle: .alert)
+        
+        let saveMeeting = UIAlertAction(title: "Save Meeting", style: .default) { (_) in
+            guard let meetingDateInput = alert.textFields?.first,
+                let meetingDate = meetingDateInput.text,
+                let meetingTimeInput = alert.textFields?[1],
+                let meetingTime = meetingTimeInput.text,
+                let meetingLocationInput = alert.textFields?.last,
+                let meetingLocation = meetingLocationInput.text else {return}
+            
+            let invoiceRef = Database.database().reference().child("teams").child(self.team!).child("meetings").childByAutoId()
+            invoiceRef.setValue(true)
+            
+            let invoiceKey = invoiceRef.key
+            
+            Database.database().reference().child("meetings").child(invoiceKey!).setValue(["date":meetingDate ,"time":meetingTime,"location":meetingLocation])
+            
+            
+        }
+        
+        let cancelAddMeeting = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Date:"
+        }
+        alert.addTextField { (textField) in
+            textField.placeholder = "Time:"
+        }
+        alert.addTextField { (textField) in
+            textField.placeholder = "Location:"
+        }
+        alert.addAction(saveMeeting)
+        alert.addAction(cancelAddMeeting)
+        
+        
+        
+        
+        present(alert, animated: true, completion: nil)
+        self.tableView.reloadData()
+
+    }
     
    
 

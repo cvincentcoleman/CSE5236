@@ -28,6 +28,11 @@ class TeamOverviewVC: UIViewController{
             let vc = segue.destination as? InvoiceVC
             vc?.team = teamNameValue
         }
+        else if segue.identifier == "toMeetingsFromTeam" {
+            let vc = segue.destination as? MeetingVC
+            vc?.team = teamNameValue
+            
+        }
     }
     
 }

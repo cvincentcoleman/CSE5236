@@ -224,7 +224,16 @@
                             <outlet property="delegate" destination="ezR-Hw-0GO" id="GbI-TB-08H"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Meetings" id="4B0-SO-O59"/>
+                    <navigationItem key="navigationItem" title="Meetings" id="4B0-SO-O59">
+                        <barButtonItem key="rightBarButtonItem" title="Add" image="plus" catalog="system" id="Hk0-6F-xc8">
+                            <connections>
+                                <action selector="addButtonDidTouch:" destination="ezR-Hw-0GO" id="xSf-PH-0Lr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="Hk0-6F-xc8" id="gm1-So-pG4"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZf-B0-LYa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -326,11 +335,20 @@
                                     <segue destination="8zQ-6Q-flt" kind="show" identifier="toInvoicesFromTeam" id="cii-pe-eve"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e41-SA-O6g">
+                                <rect key="frame" x="175" y="529" width="64" height="30"/>
+                                <state key="normal" title="Meetings"/>
+                                <connections>
+                                    <segue destination="ezR-Hw-0GO" kind="show" identifier="toMeetingsFromTeam" id="egQ-5K-Rnt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="e41-SA-O6g" firstAttribute="top" secondItem="b7C-3U-TzU" secondAttribute="bottom" constant="32" id="0cl-QB-y60"/>
                             <constraint firstItem="b7C-3U-TzU" firstAttribute="top" secondItem="KUL-mW-Q8m" secondAttribute="bottom" constant="35.5" id="APv-4P-aSX"/>
                             <constraint firstItem="KUL-mW-Q8m" firstAttribute="centerY" secondItem="4zX-78-9ex" secondAttribute="centerY" id="Lcp-TI-0ng"/>
+                            <constraint firstItem="e41-SA-O6g" firstAttribute="centerX" secondItem="4zX-78-9ex" secondAttribute="centerX" id="S0k-Rp-onp"/>
                             <constraint firstItem="b7C-3U-TzU" firstAttribute="centerX" secondItem="4zX-78-9ex" secondAttribute="centerX" id="jzt-rz-xhm"/>
                             <constraint firstItem="KUL-mW-Q8m" firstAttribute="centerX" secondItem="4zX-78-9ex" secondAttribute="centerX" id="p7E-fS-ys1"/>
                         </constraints>
@@ -364,6 +382,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="egQ-5K-Rnt"/>
         <segue reference="cii-pe-eve"/>
         <segue reference="tuh-uv-2YQ"/>
     </inferredMetricsTieBreakers>
