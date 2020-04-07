@@ -26,13 +26,14 @@ class LogInVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
- 
+        self.emailInput.text = nil
+        self.passwordInput.text = nil
            
            Auth.auth().addStateDidChangeListener() { auth, user in
-             if user != nil {
-                
+            if user != nil {
+
                 guard let uid = Auth.auth().currentUser?.uid else {return}
-                
+
                 Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { (snapshot) in
                     guard let data = snapshot.value as? [String :Any] else {return}
                     guard let admin = data["admin"] as? Bool else {return}
@@ -45,7 +46,7 @@ class LogInVC: UIViewController {
                 }
                 
                self.emailInput.text = nil
-               self.passwordInput = nil
+               self.passwordInput.text = nil
              }
         }
                 
@@ -88,10 +89,10 @@ class LogInVC: UIViewController {
 
         Auth.auth().createUser(withEmail: emailInput.text!, password: passwordInput.text!) { user, error in
           if error == nil {
-            Auth.auth().signIn(withEmail: self.emailInput.text!,
-                               password: self.passwordInput.text!)
+            Auth.auth().signIn(withEmail: email,password: password)
             
-            
+            let account = ["email": email, "admin": true] as [String : Any]
+            Database.database().reference().child("users").child(user!.user.uid).setValue(account)
             
           }
         }
