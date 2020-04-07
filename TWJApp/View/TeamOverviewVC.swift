@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class TeamOverviewVC: UIViewController{
-    
+    @IBOutlet var teamName: UILabel!
     var teamNameValue:String?
     
     override func viewDidLoad() {
@@ -20,7 +20,6 @@ class TeamOverviewVC: UIViewController{
         
     }
     
-    @IBOutlet var teamName: UILabel!
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -31,7 +30,10 @@ class TeamOverviewVC: UIViewController{
         else if segue.identifier == "toMeetingsFromTeam" {
             let vc = segue.destination as? MeetingVC
             vc?.team = teamNameValue
-            
+        }
+        else if (segue.identifier == "showMembers"){
+           let vc = segue.destination as! MembersVC
+           vc.team = teamNameValue
         }
     }
     

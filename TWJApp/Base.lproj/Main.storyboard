@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -342,6 +342,14 @@
                                     <segue destination="ezR-Hw-0GO" kind="show" identifier="toMeetingsFromTeam" id="egQ-5K-Rnt"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SC8-g3-5M5">
+                                <rect key="frame" x="175" y="585" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Members"/>
+                                <connections>
+                                    <segue destination="ns3-yJ-TUQ" kind="show" identifier="showMembers" id="7R0-Sl-oZg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -363,6 +371,83 @@
             </objects>
             <point key="canvasLocation" x="4604" y="536"/>
         </scene>
+        <!--Members-->
+        <scene sceneID="5Jz-nm-adK">
+            <objects>
+                <tableViewController id="ns3-yJ-TUQ" customClass="MembersVC" customModule="TWJApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="q0Z-sj-Afx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemberItem" id="g2V-DN-Z6M">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g2V-DN-Z6M" id="XJ0-bt-pCD">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ns3-yJ-TUQ" id="CSg-rZ-jIs"/>
+                            <outlet property="delegate" destination="ns3-yJ-TUQ" id="oyA-MT-xAP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Members" id="d4R-vX-qo9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Pep-aC-PCU">
+                            <connections>
+                                <segue destination="AY3-3T-5aj" kind="show" identifier="createMember" id="uHj-oA-p8E"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="00i-ND-Zau" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5891" y="553"/>
+        </scene>
+        <!--Add Member-->
+        <scene sceneID="BVe-Bd-zqF">
+            <objects>
+                <viewController id="AY3-3T-5aj" customClass="CreateMemberVC" customModule="TWJApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9ef-12-Ll4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nHt-0D-rMr">
+                                <rect key="frame" x="69" y="209" width="276" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fil-pt-eBR">
+                                <rect key="frame" x="154" y="308" width="107" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Create Member"/>
+                                <connections>
+                                    <action selector="SignUp:" destination="AY3-3T-5aj" eventType="touchUpInside" id="uo0-k9-ypw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8b-cI-gpj">
+                                <rect key="frame" x="69" y="180" width="86" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="wFR-Mf-vNd"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Member" id="BCh-OT-TOM"/>
+                    <connections>
+                        <outlet property="emailInput" destination="nHt-0D-rMr" id="W4f-Ja-Ocx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Akb-kd-3IQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7295.652173913044" y="552.45535714285711"/>
+        </scene>
         <!--Teams-->
         <scene sceneID="Vml-ob-TYC">
             <objects>
@@ -381,12 +466,12 @@
             <point key="canvasLocation" x="2525" y="536"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="64" height="56"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="egQ-5K-Rnt"/>
         <segue reference="cii-pe-eve"/>
         <segue reference="tuh-uv-2YQ"/>
     </inferredMetricsTieBreakers>
-    <resources>
-        <image name="plus" catalog="system" width="128" height="113"/>
-    </resources>
 </document>
