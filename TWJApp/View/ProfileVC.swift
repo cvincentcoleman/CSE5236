@@ -12,8 +12,9 @@ import Firebase
 
 
 
-class ProfileVC: UIViewController {
+class ProfileVC: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,8 +25,6 @@ class ProfileVC: UIViewController {
         guard let userEmail = tabbar.userInformation?.email else {return}
         
         userLabel.text = userEmail
-        
-        
     
     }
     
@@ -41,15 +40,72 @@ class ProfileVC: UIViewController {
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBOutlet var addButton: UIButton!
+    
+    @IBAction func addButtonPressed(_ sender: AnyObject){
+        print("addButtonPressed")
+        
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        
+        let action = UIAlertController(title: "Add Profile Image", message: nil, preferredStyle: .actionSheet)
+        
+        
+        let libraryAction =  UIAlertAction(title: "Photo Library", style: .default, handler: { (UIAlertAction) in
+            imagePicker.sourceType = .photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
+        })
+        
+        let cameraAction = UIAlertAction(title: "Camera", style: .default) { (UIAlertAction) in
+            imagePicker.sourceType = .camera
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (UIAlertAction) in
+            action.dismiss(animated: true, completion: nil)
+        }
+        action.addAction(libraryAction)
+        action.addAction(cameraAction)
+        action.addAction(cancelAction)
+        
+        self.present(action,animated: true,completion: nil)
+        
     }
-    */
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            
+        let image = info[.editedImage] as? UIImage
+        addButton.setImage(image, for: .normal)
+
+        
+        
+        guard let compressedImage = image?.jpegData(compressionQuality: 0.2) else {return}
+        let fileName = NSUUID().uuidString
+        
+        let storageRef = Storage.storage().reference().child("profileImages").child(fileName)
+        storageRef.putData(compressedImage, metadata: nil) { (metadata, err) in
+            
+            if let err = err {
+                print("photo upload failed",err)
+                return
+            }
+            
+            storageRef.downloadURL { (url, err) in
+                if let err = err {
+                    print("coulden't download url",err)
+                }
+                print(url!.absoluteString)
+                let uid = Auth.auth().currentUser?.uid
+                
+                Database.database().reference().child("users").child(uid!).child("profileImageURL").setValue(url?.absoluteString)
+                
+            }
+            
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+
+  
 
 }

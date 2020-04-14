@@ -18,7 +18,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3lS-oK-KJR">
                                 <rect key="frame" x="109" y="401" width="196" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="din-MJ-LKn">
                                 <rect key="frame" x="186" y="481" width="42" height="30"/>
@@ -98,30 +98,45 @@
                                     <action selector="signOut:" destination="BeI-O4-sbj" eventType="touchUpInside" id="hda-Ab-Q3s"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5p-34-A8q" userLabel="Username">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5p-34-A8q" userLabel="Username">
                                 <rect key="frame" x="117" y="332" width="181" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bd6-4E-vuy">
+                                <rect key="frame" x="128" y="93" width="159" height="141"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="141" id="JSx-k6-ODt"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="addButton"/>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="BeI-O4-sbj" eventType="touchUpInside" id="gOl-BT-S8L"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="fph-qJ-f0A" firstAttribute="centerY" secondItem="hwq-wW-UNc" secondAttribute="centerY" id="3RF-h1-b14"/>
+                            <constraint firstItem="bd6-4E-vuy" firstAttribute="leading" secondItem="y95-hY-wNu" secondAttribute="leading" constant="128" id="Nq6-Ze-hZb"/>
+                            <constraint firstItem="bd6-4E-vuy" firstAttribute="centerX" secondItem="N5p-34-A8q" secondAttribute="centerX" id="Tdm-Fg-yHU"/>
                             <constraint firstItem="fph-qJ-f0A" firstAttribute="centerX" secondItem="hwq-wW-UNc" secondAttribute="centerX" id="WUf-Qq-Ryv"/>
+                            <constraint firstItem="N5p-34-A8q" firstAttribute="top" secondItem="bd6-4E-vuy" secondAttribute="bottom" constant="98" id="tDO-Id-Is5"/>
+                            <constraint firstItem="bd6-4E-vuy" firstAttribute="centerX" secondItem="hwq-wW-UNc" secondAttribute="centerX" id="v6y-sV-KLu"/>
+                            <constraint firstItem="bd6-4E-vuy" firstAttribute="top" secondItem="y95-hY-wNu" secondAttribute="top" constant="93" id="xDw-MH-5FH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="y95-hY-wNu"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="ebd-bO-YvN"/>
                     <connections>
+                        <outlet property="addButton" destination="bd6-4E-vuy" id="1zh-Ub-mj1"/>
                         <outlet property="userLabel" destination="N5p-34-A8q" id="6v0-SW-jiN"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="signOut" id="xp0-Vr-DOx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="abv-aV-OAX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3445" y="-648"/>
+            <point key="canvasLocation" x="3444.9275362318845" y="-648.21428571428567"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="SSt-Hv-J6m">
@@ -472,6 +487,7 @@
         <segue reference="tuh-uv-2YQ"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="addButton" width="738" height="700"/>
         <image name="plus" catalog="system" width="128" height="113"/>
     </resources>
 </document>
