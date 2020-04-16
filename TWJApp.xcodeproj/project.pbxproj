@@ -12,6 +12,7 @@
 		BADFF86C1DC7B39FAEF6DD12 /* Pods_TWJApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A41A7E38F75D2383199498F /* Pods_TWJApp.framework */; };
 		BD2C71CC2436B46C000052B2 /* teamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C71CB2436B46C000052B2 /* teamsVC.swift */; };
 		BD2C71CE2436C80D000052B2 /* TeamOverviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C71CD2436C80D000052B2 /* TeamOverviewVC.swift */; };
+		BD3801132447E580008A6352 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3801122447E580008A6352 /* Extensions.swift */; };
 		BD4D603623ED2BC400EF89CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D603523ED2BC400EF89CE /* AppDelegate.swift */; };
 		BD4D603823ED2BC400EF89CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D603723ED2BC400EF89CE /* SceneDelegate.swift */; };
 		BD4D603A23ED2BC400EF89CE /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D603923ED2BC400EF89CE /* LogInVC.swift */; };
@@ -58,6 +59,7 @@
 		84458AEAD5880B42B09B0776 /* Pods-TWJAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJAppTests.release.xcconfig"; path = "Target Support Files/Pods-TWJAppTests/Pods-TWJAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		BD2C71CB2436B46C000052B2 /* teamsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = teamsVC.swift; sourceTree = "<group>"; };
 		BD2C71CD2436C80D000052B2 /* TeamOverviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamOverviewVC.swift; sourceTree = "<group>"; };
+		BD3801122447E580008A6352 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BD4D603223ED2BC400EF89CE /* TWJApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWJApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4D603523ED2BC400EF89CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD4D603723ED2BC400EF89CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BD3801112447E549008A6352 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BD3801122447E580008A6352 /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		BD4D602923ED2BC400EF89CE = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +176,7 @@
 		BD4D603423ED2BC400EF89CE /* TWJApp */ = {
 			isa = PBXGroup;
 			children = (
+				BD3801112447E549008A6352 /* Utils */,
 				BDE25B0823F35A0D008EF29D /* TWJApp.entitlements */,
 				BD4D603523ED2BC400EF89CE /* AppDelegate.swift */,
 				BDB67B6A23EDE10D00567D88 /* View */,
@@ -484,6 +495,7 @@
 				BD75EB0924129C230095100F /* NotificationsVC.swift in Sources */,
 				BD4D603823ED2BC400EF89CE /* SceneDelegate.swift in Sources */,
 				BDA76B84242A77300027F5D6 /* userr.swift in Sources */,
+				BD3801132447E580008A6352 /* Extensions.swift in Sources */,
 				BDB643D4243538EA00740779 /* TabBarController.swift in Sources */,
 				BD75EB01241013A70095100F /* InvoiceItem.swift in Sources */,
 				BDFE19E823F85F9400118E90 /* InvoiceVC.swift in Sources */,

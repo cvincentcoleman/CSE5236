@@ -23,8 +23,27 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate & UINavigatio
         let tabbar = self.tabBarController as! TabBarController
         
         guard let userEmail = tabbar.userInformation?.email else {return}
-        
         userLabel.text = userEmail
+        
+        if (tabbar.userInformation?.ProfileimageURL.count != 0){
+        //
+                    let url = tabbar.userInformation!.ProfileimageURL
+        //
+        //            let profileImage = UIImageView()
+        //            profileImage.load(url: url!)
+        //            print(profileImage.image)
+                    
+                    let storageRef = Storage.storage().reference(forURL: url)
+                    // Download the data, assuming a max size of 1MB (you can change this as necessary)
+                    storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+                          // Create a UIImage, add it to the array
+                        let pic = UIImage(data: data!)
+                        
+                        self.addButton.setImage(pic, for: .normal)
+                    }
+                }
+        
+        
     
     }
     
@@ -94,7 +113,6 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate & UINavigatio
                 if let err = err {
                     print("coulden't download url",err)
                 }
-                print(url!.absoluteString)
                 let uid = Auth.auth().currentUser?.uid
                 
                 Database.database().reference().child("users").child(uid!).child("profileImageURL").setValue(url?.absoluteString)
@@ -105,7 +123,6 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate & UINavigatio
         
         dismiss(animated: true, completion: nil)
     }
-
-  
-
 }
+
+

@@ -12,10 +12,13 @@ struct Userr {
     let email: String
     let team: String
     let admin: Bool
+    let ProfileimageURL: String
     
     init(data: [String:Any]) {
         self.email = data["email"] as? String ?? "no email"
         self.team = data["team"] as? String ?? "no team"
         self.admin = data["admin"] as? Bool ?? false
+        self.ProfileimageURL = data["profileImageURL"] as? String ?? ""
+        
     }
 }
