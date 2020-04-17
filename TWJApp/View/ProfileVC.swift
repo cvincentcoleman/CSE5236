@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import FirebaseUI
+import FirebaseStorage
 
 
 
@@ -27,21 +29,43 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate & UINavigatio
         
         if (tabbar.userInformation?.ProfileimageURL.count != 0){
         //
-                    let url = tabbar.userInformation!.ProfileimageURL
-        //
-        //            let profileImage = UIImageView()
-        //            profileImage.load(url: url!)
-        //            print(profileImage.image)
-                    
-                    let storageRef = Storage.storage().reference(forURL: url)
-                    // Download the data, assuming a max size of 1MB (you can change this as necessary)
-                    storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
-                          // Create a UIImage, add it to the array
-                        let pic = UIImage(data: data!)
-                        
-                        self.addButton.setImage(pic, for: .normal)
-                    }
-                }
+        let url = tabbar.userInformation!.ProfileimageURL
+//
+//                    let storageRef = Storage.storage().reference(forURL: url)
+//
+//                    storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+//
+//                        let pic = UIImage(data: data!)
+//
+//                        self.addButton.setImage(pic, for: .normal)
+            
+            
+//                    }
+            print("")
+            print(url)
+            print("")
+
+            let httpsReference = Storage.storage().reference(forURL: url)
+            
+            print("")
+            print(httpsReference)
+            print("")
+            
+            let profilePicture = UIImageView()
+            let pp = UIImageView()
+            load(url: URL(string: url)!)
+            
+            pp.sizeToFit()
+            print(pp.image)
+            
+            let placeholderImage = UIImage(named: "addButton")
+        
+            profilePicture.sd_setImage(with: httpsReference, placeholderImage: placeholderImage)
+            
+            print(profilePicture.image)
+
+            self.addButton.setImage(pp.image, for: .normal)
+        }
         
         
     
@@ -99,7 +123,8 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate & UINavigatio
         
         
         guard let compressedImage = image?.jpegData(compressionQuality: 0.2) else {return}
-        let fileName = NSUUID().uuidString
+        var fileName = NSUUID().uuidString
+        fileName = fileName + ".jpg"
         
         let storageRef = Storage.storage().reference().child("profileImages").child(fileName)
         storageRef.putData(compressedImage, metadata: nil) { (metadata, err) in
@@ -122,6 +147,26 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate & UINavigatio
         }
         
         dismiss(animated: true, completion: nil)
+    }
+    fileprivate func load(url: URL){
+        
+           
+        URLSession.shared.dataTask(with: url) { (data, response, err) in
+            //check for the error, then construct the image using data
+            if let err = err {
+                print("Failed to fetch profile image:", err)
+                return
+            }
+            //perhaps check for responce of 200 (HTTP success)
+               
+            guard let data = data else {return}
+            let image = UIImage(data: data)
+               
+            //need to get back on to the main thread
+            DispatchQueue.main.async {
+                self.addButton.setImage(image, for: .normal)
+            }
+        }.resume()
     }
 }
 

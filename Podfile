@@ -16,6 +16,7 @@ target 'TWJApp' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'SwiftKeychainWrapper'
+  pod 'FirebaseUI/Storage'
 
   target 'TWJAppTests' do
     inherit! :search_paths
