@@ -29,41 +29,20 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate & UINavigatio
         
         if (tabbar.userInformation?.ProfileimageURL.count != 0){
         //
-        let url = tabbar.userInformation!.ProfileimageURL
-//
-//                    let storageRef = Storage.storage().reference(forURL: url)
-//
-//                    storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
-//
-//                        let pic = UIImage(data: data!)
-//
-//                        self.addButton.setImage(pic, for: .normal)
+            let url = tabbar.userInformation!.ProfileimageURL
             
-            
-//                    }
-            print("")
-            print(url)
-            print("")
-
             let httpsReference = Storage.storage().reference(forURL: url)
-            
-            print("")
-            print(httpsReference)
-            print("")
-            
+                
             let profilePicture = UIImageView()
             let pp = UIImageView()
             load(url: URL(string: url)!)
-            
+                
             pp.sizeToFit()
-            print(pp.image)
-            
+                
             let placeholderImage = UIImage(named: "addButton")
         
             profilePicture.sd_setImage(with: httpsReference, placeholderImage: placeholderImage)
             
-            print(profilePicture.image)
-
             self.addButton.setImage(pp.image, for: .normal)
         }
         
