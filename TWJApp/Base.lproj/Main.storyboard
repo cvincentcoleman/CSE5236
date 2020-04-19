@@ -122,12 +122,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80A-3N-leI">
-                                <rect key="frame" x="116.5" y="621" width="181" height="30"/>
+                                <rect key="frame" x="117" y="621" width="181" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="LZY-at-nYk"/>
-                                    <constraint firstAttribute="width" constant="181" id="Q5X-TP-hhY"/>
-                                </constraints>
                                 <state key="normal" title="Change Password">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -160,9 +156,10 @@
                             <constraint firstItem="fph-qJ-f0A" firstAttribute="top" secondItem="80A-3N-leI" secondAttribute="bottom" constant="30" id="QXw-eH-o2E"/>
                             <constraint firstItem="fph-qJ-f0A" firstAttribute="leading" secondItem="y95-hY-wNu" secondAttribute="leading" constant="117" id="TOf-zV-sfZ"/>
                             <constraint firstItem="y95-hY-wNu" firstAttribute="bottom" secondItem="fph-qJ-f0A" secondAttribute="bottom" constant="48" id="UDr-gq-veS"/>
-                            <constraint firstItem="80A-3N-leI" firstAttribute="centerX" secondItem="hwq-wW-UNc" secondAttribute="centerX" id="WYT-rm-vmE"/>
                             <constraint firstItem="bd6-4E-vuy" firstAttribute="top" secondItem="y95-hY-wNu" secondAttribute="top" constant="39" id="nbq-qk-BNB"/>
-                            <constraint firstItem="80A-3N-leI" firstAttribute="centerX" secondItem="hwq-wW-UNc" secondAttribute="centerX" id="sDL-N2-fCV"/>
+                            <constraint firstItem="y95-hY-wNu" firstAttribute="trailing" secondItem="80A-3N-leI" secondAttribute="trailing" constant="116" id="pfP-Z7-ijb"/>
+                            <constraint firstItem="fph-qJ-f0A" firstAttribute="top" secondItem="80A-3N-leI" secondAttribute="bottom" constant="30" id="vgQ-GT-N0o"/>
+                            <constraint firstItem="80A-3N-leI" firstAttribute="leading" secondItem="y95-hY-wNu" secondAttribute="leading" constant="117" id="wV6-Ef-EjL"/>
                             <constraint firstItem="bd6-4E-vuy" firstAttribute="centerX" secondItem="hwq-wW-UNc" secondAttribute="centerX" id="wXr-FV-n2d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="y95-hY-wNu"/>

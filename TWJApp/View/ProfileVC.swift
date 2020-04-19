@@ -99,6 +99,10 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate & UINavigatio
     
         let alert = UIAlertController(title: "Password", message: "Choose a new password", preferredStyle: .alert)
         
+        let dissmiss = UIAlertAction(title: "OK", style: .default) { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }
+        
         let changePassword = UIAlertAction(title: "Change Password", style: .default) { (UIAlertAction) in
             guard let oldPasswordInput = alert.textFields?.first,
                 let oldPassword = oldPasswordInput.text else {return}
@@ -111,34 +115,43 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate & UINavigatio
                 
             // Prompt the user to re-provide their sign-in credentials
             credential = EmailAuthProvider.credential(withEmail: user?.email ?? "", password: oldPassword)
-            
 
             //NOTES
             //reauth works, need to retrieve old passwords and input them in credentials along with actual email.
             user?.reauthenticate(with: credential, completion: { (result, error) in
                 
+                let comfirmationAlert = UIAlertController(title: "Password Updated", message: nil, preferredStyle: .alert)
+
                 if let error = error{
                     print("error with Reauth", error)
+                    comfirmationAlert.title = "Passsword Update Failed"
+                    comfirmationAlert.message = "Please try again"
                 }
-                
+                else{
+                    Auth.auth().currentUser?.updatePassword(to: newPassword) { (error) in
+                        
+                        if let error = error{
+                            print(error)
+                            comfirmationAlert.title = "Passsword Update Failed"
+                            comfirmationAlert.message = "Please try again"
+                        }
+                    }
+                }
+                comfirmationAlert.addAction(dissmiss)
+                self.present(comfirmationAlert, animated:  true, completion: nil)
             })
             
-            Auth.auth().currentUser?.updatePassword(to: newPassword) { (error) in
-                if let error = error{
-                    print(error)
-                    print(newPassword)
-                }
-          
-            }
         }
         
         let cancelChangePassword = UIAlertAction(title: "Cancel", style: .cancel)
         
         alert.addTextField { (textField) in
             textField.placeholder = "Current Password"
+            textField.isSecureTextEntry = true
         }
         alert.addTextField { (textField) in
             textField.placeholder = "New Password"
+            textField.isSecureTextEntry = true
         }
         alert.addAction(changePassword)
         alert.addAction(cancelChangePassword)
