@@ -94,6 +94,58 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate & UINavigatio
         
     }
     
+    
+    @IBAction func changePassword(_ sender: AnyObject){
+    
+        let alert = UIAlertController(title: "Password", message: "Choose a new password", preferredStyle: .alert)
+        
+        let changePassword = UIAlertAction(title: "Change Password", style: .default) { (UIAlertAction) in
+            guard let oldPasswordInput = alert.textFields?.first,
+                let oldPassword = oldPasswordInput.text else {return}
+            
+            guard let newPasswordInput = alert.textFields?.last,
+            let newPassword = newPasswordInput.text else {return}
+            
+            let user = Auth.auth().currentUser
+            var credential : AuthCredential
+                
+            // Prompt the user to re-provide their sign-in credentials
+            credential = EmailAuthProvider.credential(withEmail: user?.email ?? "", password: oldPassword)
+            
+
+            //NOTES
+            //reauth works, need to retrieve old passwords and input them in credentials along with actual email.
+            user?.reauthenticate(with: credential, completion: { (result, error) in
+                
+                if let error = error{
+                    print("error with Reauth", error)
+                }
+                
+            })
+            
+            Auth.auth().currentUser?.updatePassword(to: newPassword) { (error) in
+                if let error = error{
+                    print(error)
+                    print(newPassword)
+                }
+          
+            }
+        }
+        
+        let cancelChangePassword = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Current Password"
+        }
+        alert.addTextField { (textField) in
+            textField.placeholder = "New Password"
+        }
+        alert.addAction(changePassword)
+        alert.addAction(cancelChangePassword)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             
         let image = info[.editedImage] as? UIImage
